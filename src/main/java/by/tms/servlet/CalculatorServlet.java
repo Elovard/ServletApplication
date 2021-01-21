@@ -25,8 +25,6 @@ public class CalculatorServlet extends HttpServlet {
         req.setAttribute("result", result);
         getServletContext().getRequestDispatcher("/pages/Calculator.jsp").forward(req, resp);
 
-
-
     }
 
     @Override

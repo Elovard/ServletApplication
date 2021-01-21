@@ -26,27 +26,5 @@ public class AuthorizationServlet extends HttpServlet {
         String password = req.getParameter("password");
         User byLogin = inMemoryUserStorage.getByLogin(login);
 
-//        if (byLogin != null) {
-//            if (byLogin.getPassword().equals(password)) {
-//                req.getSession().setAttribute("user", byLogin);
-//                req.setAttribute("messageHomeReg", "Welcome back, dear " + byLogin.getName());
-//                getServletContext().getRequestDispatcher("/pages/index.jsp").forward(req, resp);
-//
-//
-//            } else {
-//                req.setAttribute("messageWrongPassword", "Error! Wrong Password!");
-//                getServletContext().getRequestDispatcher("/pages/auth.jsp").forward(req, resp);
-//            }
-//        } else {
-//            req.setAttribute("messageNotRegistered", " Error! You are not registered here! (user is not found)");
-//            getServletContext().getRequestDispatcher("/pages/auth.jsp").forward(req, resp);
-//        }
-
-//        if (byLogin != null){
-//            if (byLogin.getPassword().equals(password)){
-//                req.getSession().setAttribute("user", byLogin);
-//                resp.sendRedirect("/");
-//            }
-//        }
     }
 }

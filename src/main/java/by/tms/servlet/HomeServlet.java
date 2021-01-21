@@ -1,6 +1,7 @@
 package by.tms.servlet;
 
 import by.tms.model.User;
+import by.tms.storage.InMemoryItemStorage;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,10 +33,15 @@ public class HomeServlet extends HttpServlet {
     //session scope
     //request scope
 
+    private InMemoryItemStorage inMemoryItemStorage = InMemoryItemStorage.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        req.setAttribute("name", name);
-        getServletContext().getRequestDispatcher("/pages/index.jsp").forward(req, resp);
+//        String name = req.getParameter("name");
+//        req.setAttribute("name", name);
+//        getServletContext().getRequestDispatcher("/pages/index.jsp").forward(req, resp);
+
+        req.setAttribute("items", inMemoryItemStorage.getAll());
+        getServletContext().getRequestDispatcher("/pages/index.jsp").forward(req,resp);
     }
 }
