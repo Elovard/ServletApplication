@@ -1,5 +1,6 @@
 package by.tms.storage;
 
+import by.tms.model.Role;
 import by.tms.model.User;
 
 import java.util.ArrayList;
@@ -7,6 +8,10 @@ import java.util.List;
 
 public class InMemoryUserStorage {
     private static List<User> users = new ArrayList<>();
+
+    static {
+        users.add(new User("Admin", "admin", "admin", Role.ADMIN));
+    }
 
     public boolean save(User user){
         if (users.contains(user)) {

@@ -21,8 +21,8 @@ public class BasketServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
         Book byId = inMemoryItemStorage.getById(Integer.parseInt(id));
-        Basket basket = (Basket) req.getSession().getAttribute("basket");
+        Basket basket = (Basket)req.getSession().getAttribute("basket");
         basket.addItem(byId);
-        resp.sendRedirect("/item/view?id=" + id);
+        resp.sendRedirect("/item/view?id="+id);
     }
 }

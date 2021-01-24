@@ -1,5 +1,6 @@
 package by.tms.filter;
 
+import by.tms.model.Role;
 import by.tms.model.User;
 import by.tms.storage.InMemoryUserStorage;
 
@@ -27,14 +28,24 @@ public class AuthorizationFilter extends HttpFilter {
             } else {
                 chain.doFilter(req, res);
             }
+            if(byLogin.getRole().equals(Role.ADMIN)){
+                req.getSession().setAttribute("isAdmin", true);
+            } else {
+                chain.doFilter(req, res);
+            }
             if (!byLogin.getPassword().equals(password)) {
                 req.setAttribute("messageWrongPassword", "Error! Wrong Password!");
                 getServletContext().getRequestDispatcher("/pages/auth.jsp").forward(req, res);
 
             } else {
-                req.getSession().setAttribute("user", byLogin);  // CHECK THIS, DOESN'T WORK
-                req.setAttribute("messageHomeReg", "Welcome back, dear" + byLogin.getName());
+                req.getSession().setAttribute("user", byLogin);
+                req.setAttribute("messageHomeReg", "Welcome back!");
                 getServletContext().getRequestDispatcher("/pages/index.jsp").forward(req, res);
+                req.getSession().setAttribute("isGuest", false);
+                req.getSession().setAttribute("isUser", true);
+
+
+
             }
 
         } else {

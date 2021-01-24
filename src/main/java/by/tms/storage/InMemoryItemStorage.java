@@ -23,9 +23,10 @@ public class InMemoryItemStorage {
     }
 
     {
-        books.add(new Book("Warcraft","Blizzard","something",50.0, 1));
-        books.add(new Book("Titanic","Author","desc here",60.0, 2));
-        books.add(new Book("Harry Potter","JK Rowling","desc again",150.0, 3));
+        books.add(new Book("Warcraft: Chronicle Volume 1","Blizzard","World of Warcraft: Chronicle Volume 1 is a journey through an age of myth and legend, a time long before the Horde and the Alliance came to be.",50.0, 1));
+        books.add(new Book("Tony Robbins: Unshakeable","Tony Robbins","No matter your salary, your stage of life, or when you started, this book will provide the tools to help you achieve your financial goals more rapidly than you ever thought possible.",60.0, 2));
+        books.add(new Book("Harry Potter","JK Rowling","Harry Potter's summer has included the worst birthday ever, doomy warnings from a house-elf called Dobby, and rescue from the Dursleys by his friend Ron Weasley in a magical flying car!",150.0, 3));
+        books.add(new Book("Head First Java", "Kathy Sierra", "If you've read a Head First book, you know what to expect - a visually rich format designed for the way your brain works. If you haven't, you're in for a treat. You'll see why people say it's unlike any other Java book you've ever read.", 100, 4));
 
     }
 

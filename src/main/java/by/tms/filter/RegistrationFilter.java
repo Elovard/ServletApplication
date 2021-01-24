@@ -1,5 +1,6 @@
 package by.tms.filter;
 
+import by.tms.model.Role;
 import by.tms.model.User;
 import by.tms.storage.InMemoryUserStorage;
 
@@ -40,7 +41,7 @@ public class RegistrationFilter extends HttpFilter {
                         chain.doFilter(req, res);
                     }
 
-                    User user = new User(name, login, password);
+                    User user = new User(name, login, password, Role.USER);
                     boolean save = inMemoryUserStorage.save(user);
 
                     if(save){
