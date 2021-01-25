@@ -6,6 +6,7 @@
 <body>
 <jsp:include page="_header.jsp"/>
 <form action="/calc" method="post">
+    <div class="row justify-content-center mt-5">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">firstNum</label>
         <input type="number" value="${requestScope.firstNum}" name="firstNum" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -18,6 +19,7 @@
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Operation</label>
         <input type="text" value="${requestScope.operation}" name="operation" class="form-control" id="exampleInputPassword1">
+    </div>
     </div>
     <button type="submit" class="btn btn-primary">Calculate</button>
 </form>

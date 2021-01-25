@@ -7,12 +7,11 @@
 <body>
 <jsp:include page="_header.jsp"/>
 <div class ="container">
-    <p>Your Account</p>
+    <p><strong>Your Account Info</strong></p>
     <br>
     <p>Name: ${sessionScope.user.name}</p>
     <br>
     <p>Your Basket:</p>
-    <br>
     <ul>
         <c:forEach items="${sessionScope.basket.getAll()}" var="book">
             <li>${book.name}</li>

@@ -8,6 +8,7 @@
 <jsp:include page="_header.jsp"/>
 <div class="container">
 	<form action="/reg" method="post">
+		<div class="row justify-content-center mt-5">
 		<div class="mb-3">
 			<label for="exampleInputEmail1" class="form-label">Name</label>
 			<input type="text" value="${requestScope.oldName}" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -20,6 +21,7 @@
 		<div class="mb-3">
 			<label for="exampleInputPassword1" class="form-label">Password</label>
 			<input type="password" value="${requestScope.oldPassword}" name="password" class="form-control" id="exampleInputPassword1">
+		</div>
 		</div>
 		<button type="submit" class="btn btn-primary">Registration</button>
 	</form>
